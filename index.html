@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
+    
     <!-- Primary Meta Tags -->
     <title>Best Boat Rides in Pondicherry | Mangrove Forest Boating</title>
     <meta name="title" content="Best Boat Rides in Pondicherry | Mangrove Forest Boating">
@@ -29,7 +30,7 @@
     <meta name="twitter:url" content="https://mangroveforestboating.com/">
     <meta name="twitter:title" content="Best Boat Rides in Pondicherry | Mangrove Forest Boating">
     <meta name="twitter:description" content="Experience unforgettable boat rides in Pondicherry. Explore mangrove forests, river mouths, and historic locations.">
-    <meta property="og:image" content="https://mangroveforestboating.com/img/mangroves.jpeg">
+    <meta name="twitter:image" content="https://mangroveforestboating.com/img/og-image.jpg">
     
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="IN-PY">
@@ -43,13 +44,15 @@
     <meta name="distribution" content="Global">
     <meta name="rating" content="General">
     
-    <!-- Favicon - FIXED -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon-16x16.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230ea5e9'/><text x='50' y='65' font-size='50' text-anchor='middle'>⛵</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230ea5e9'/><text x='50' y='65' font-size='50' text-anchor='middle'>⛵</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white'>🚤</text></svg>">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white'>🚤</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white'>🚤</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white'>🚤</text></svg>">
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#0ea5e9">
@@ -688,7 +691,7 @@
             margin-top: 2rem;
         }
 
-        /* Gallery */
+        /* Gallery - FIXED VERSION */
         .gallery {
             padding: 6rem 2rem;
             background: var(--light-blue);
@@ -785,6 +788,170 @@
             border: 0;
             border-radius: 15px;
         }
+         /* Vertical Videos Section */
+        .videos {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+ 
+        .videos-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            justify-items: center;
+        }
+ 
+        .video-card {
+            width: 100%;
+            max-width: 400px;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+ 
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+ 
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: var(--dark-blue);
+            overflow: hidden;
+        }
+ 
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+ 
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+ 
+        .video-container:hover .video-overlay {
+            opacity: 1;
+        }
+ 
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+ 
+        .play-button:hover {
+            transform: scale(1.1);
+            background: var(--white);
+        }
+ 
+        .video-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+ 
+        .video-info h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+ 
+        .video-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+ 
+        /* Video Controls Styling */
+        video::-webkit-media-controls-panel {
+            background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        }
+ 
+        video::-webkit-media-controls-play-button {
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+ 
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+ 
+        .contact-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+ 
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+ 
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+ 
+        .contact-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+ 
+        .contact-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+ 
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+ 
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background: var(--light-blue);
+        }
+ 
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 15px;
+        }
+ 
 
         /* Footer */
         footer {
@@ -1034,7 +1201,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="img/fy.jpeg" alt="Boating">
+                <img src="img/ fy.jpeg" alt="Boating">
             </div>
         </div>
     </section>
@@ -1246,6 +1413,54 @@
         </div>
     </section>
 
+    <!-- Vertical Videos Section -->
+    <section class="videos" id="videos">
+        <div class="section-title reveal">
+            <h2>Experience the Journey</h2>
+            <p>Watch our exciting boat ride adventures in action</p>
+        </div>
+        <div class="videos-grid">
+            <div class="video-card reveal">
+                <div class="video-container">
+                    <video 
+                        controls 
+                        preload="metadata"
+                        poster="img/sai.jpg">
+                        <source src="videos/boat-ride-1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Mangrove Forest Adventure</h3>
+                    <p>Explore the serene beauty of mangrove ecosystems</p>
+                </div>
+            </div>
+ 
+            <div class="video-card reveal">
+                <div class="video-container">
+                    <video 
+                        controls 
+                        preload="metadata"
+                        poster="img/mangrove.jpeg">
+                        <source src="videos/boat-ride-2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>River Mouth Cruise</h3>
+                    <p>Witness where the river meets the ocean</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-title reveal">
